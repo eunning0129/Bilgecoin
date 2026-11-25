@@ -1,4 +1,4 @@
-import calendar
+ import calendar
 import os, json, asyncio, logging, hmac
 from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
@@ -767,7 +767,7 @@ async def update_panel(key,move=False):
   view=panel_view(key) if PANELS[key][2] else None
   em=discord.Embed(title=title,description=desc,color=discord.Color.gold())
   if key=='GUIDE_CHANNEL_ID':
-   em.description='**포인트 획득 방법**\n• 출석: 1등 3,000P / 2등 2,000P / 3등 1,000P / 이후 50P\n• 월간 공동 출석왕: 각각 5,000P (다음 달 10일)\n• 음성 활동: 시간당 50P, 일일 한도 없음. 봇·AFK·헤드셋 음소거 제외, 조건 충족 인원 2명 이상.\n• 모바시·저티어·고티어·20인 정상 종료: 1,000P\n• 단판: 팀 입력 후 종료 시 300P\n\n**포인트 사용 방법**\n• 포인트 상점에서 상품 확인 후 /포인트상품요청, 관리자 승인 후 정산\n• 역할 상점: 영구 소장 50,000P, 중복 구매 불가\n• /꾸미기장착 및 /꾸미기해제: 무료, 한 번에 하나 장착\n• 내 인벤토리와 잔액·내역 채널에서 개인 기록 확인'
+   em.description='**포인트 획득 방법**\n• 출석: 1등 3,000P / 2등 2,000P / 3등 1,000P / 이후 50P\n• 월간 공동 출석왕: 각각 5,000P (다음 달 10일)\n• 음성 활동: 시간당 50P. 헤드셋 음소거 제외, 인원 2명 이상의 보이스 채널일 경우 지급\n• 모바시·저티어·고티어·20인 3판 2선: 1,000P\n• 단판: 팀 입력 후 종료 시 300P\n\n**포인트 사용 방법**\n• 포인트 상점에서 상품 확인 후 /포인트상품요청, 관리자 승인 후 정산\n• 역할 상점: 영구 소장 50,000P\n• 내 인벤토리와 잔액·내역 채널에서 개인 기록 확인 가능'
   elif key=='ATTENDANCE_CHANNEL_ID':em=await attendance_calendar(GUILD_ID)
   elif key=='FEATURE_SHOP_CHANNEL_ID':
    em.description='포인트 이용 버튼으로 상품 목록을 확인하고 /포인트상품요청으로 신청하세요. 관리자 승인 후 정산됩니다.'
